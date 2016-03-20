@@ -48,26 +48,27 @@ var _TeamNamesByIndex = [
 	];
 
 var _Results = [
-	[null, null, [2,0], [0,1], null, [2,1], [2,1], [0,0], [2,1], [3,0], [1,0], null, [0,0], [2,0], [3,1], [1,2], [1,1], null, null, [0,2]], //ARSENAL
-	[[0,2], null, null, null, [1,0], [1,3], [1,1], [0,6], [0,0], [0,1], null, [2,0], null, [0,1], [2,2], [1,2], [0,2], [2,3], [0,1], [1,1]], //ASTON VILLA
-	[[0,2], [0,1], null, null, [0,0], [3,3], [1,1], null, null, [2,1], [0,1], [3,0], [2,0], [1,3], [2,0], [3,2], [1,5], [1,1], null, [1,3]], //BOURNEMOUTH
-	[[2,0], [2,0], [0,1], null, [1,2], [3,3], null, [1,3], null, [1,1], [5,1], [1,0], [1,3], [1,1], [3,1], [2,2], null, [2,2], [2,2], [2,2]], //CHELSEA
-	[[1,2], [2,1], [1,2], [0,3], null, null, [0,1], [1,2], [0,1], [0,0], [5,1], null, [1,0], null, [0,1], [0,0], [1,3], [1,2], [2,0], [1,3]], //CRYSTAL PALACE
-	[[0,2], [4,0], null, [3,1], [1,1], null, [2,3], [1,1], [0,2], [0,3], [3,0], null, null, [3,4], [6,2], [1,2], [1,1], [2,2], [0,1], [2,3]], //EVERTON
-	[[2,5], null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ], //LEICESTER CITY
-	[[3,3], null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ], //LIVERPOOL
-	[null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ], //MANCHESTER CITY
-	[[3,2], null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ], //MANCHESTER UNITED
-	[[0,1], null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ], //NEWCASTLE UNITED
-	[[1,1], null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ], //NORWICH CITY
-	[[4,0], null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ], //SOUTHAMPTON
-	[[0,0], null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ], //STOKE CITY
-	[null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ],  //SUNDERLAND
-	[[0,3], null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ], //SWANSEA CITY
-	[[2,2], null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ], //TOTTENHAM HOTSPUR
-	[[0,3], null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ], //WATFORD
-	[[2,1], null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ], //WEST BROMWICH ALBION
-	[null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ]  //WEST HAM UNITED
+	[null,null,[2,0],[0,1],null,[2,1],[2,1],[0,0],[2,1],[3,0],[1,0],null,[0,0],[2,0],[3,1],[1,2],[1,1],null,null,[0,2]],
+	[[0,2],null,null,null,[1,0],[1,3],[1,1],[0,6],[0,0],[0,1],null,[2,0],null,[0,1],[2,2],[1,2],[0,2],[2,3],[0,1],[1,1]],
+	[[0,2],[0,1],null,null,[0,0],[3,3],[1,1],null,null,[2,1],[0,1],[3,0],[2,0],[1,3],[2,0],[3,2],[1,5],[1,1],null,[1,3]],
+	[[2,0],[2,0],[0,1],null,[1,2],[3,3],null,[1,3],null,[1,1],[5,1],[1,0],[1,3],[1,1],[3,1],[2,2],null,[2,2],[2,2],[2,2]],
+	[[1,2],[2,1],[1,2],[0,3],null,null,[0,1],[1,2],[0,1],[0,0],[5,1],null,[1,0],null,[0,1],[0,0],[1,3],[1,2],[2,0],[1,3]],
+	[[0,2],[4,0],null,[3,1],[1,1],null,[2,3],[1,1],[0,2],[0,3],[3,0],null,null,[3,4],[6,2],[1,2],[1,1],[2,2],[0,1],[2,3]],
+	[[2,5],[3,2],[0,0],[2,1],[1,0],null,null,[2,0],[0,0],[1,1],[1,0],[1,0],null,[3,0],[4,2],null,[1,1],[2,1],[2,],[],null],
+	[[3,3],[3,2],[1,0],null,[1,2],null,[1,0],null,[3,0],[0,1],null,[1,1],[1,1],null,[2,2],[1,0],null,null,[2,2],[0,3]],
+	[null,[4,0],[5,1],[3,0],[4,0],[0,0],[1,3],[1,4],null,null,[6,1],[2,1],[3,1],null,[4,1],[2,1],[1,2],[2,0],null,[1,2]],
+	[[3,2],null,null,[0,0],null,null,null,[3,1],[0,0],null,[0,0],[1,2],[0,1],[3,0],[3,0],[2,1],[1,0],[1,0],[2,0],[0,0]],
+	[[0,1],[1,1],[1,3],[2,2],null,[0,1],[0,3],[2,0],null,[3,3],null,[6,2],[2,2],[0,0],null,null,null,[1,2],[1,0],[2,1]],
+	[[1,1],[2,0],[3,1],[1,2],[1,3],[1,1],[1,2],[4,5],[0,0],null,null,null,[1,0],[1,1],null,[1,0],[0,3],null,[0,1],[2,2]],
+	[[4,0],[1,1],[2,0],[1,2],null,[0,3],[2,2],null,null,[2,3],null,[3,0],null,[0,1],[1,1],[3,1],[0,2],[2,0],[3,0],[1,0]],
+	[[0,0],[2,1],[2,1],[1,0],[1,2],[0,3],[2,2],[0,1],[2,0],[2,0],[1,0],[3,1],[1,2],null,null,null,null,[0,2],[0,1],null],
+	[null,[3,1],[1,1],null,[2,2],null,null,[0,1],[0,1],[2,1],[3,0],[1,3],[0,1],[2,0],null,[1,1],[0,1],[0,1],null,[2,2]],
+	[[0,3],[1,0],[2,2],null,[1,1],[0,0],[0,3],null,null,[2,1],[2,0],[1,0],[0,1],[0,1],[2,4],null,[2,2],[1,0],[1,0],[0,0]],
+	[[2,2],[3,1],null,[0,0],[1,0],[0,0],[0,1],[0,0],[4,1],null,[1,2],[3,0],null,[2,2],[4,1],[2,1],null,[1,0],null,[4,1]],
+	[[0,3],null,[0,0],[0,0],[0,1],null,[0,1],[3,0],[1,2],[1,2],[2,1],[2,0],[0,0],[1,2],null,[1,0],[1,2],null,[0,0],[2,0]],
+	[[2,1],[0,0],[1,2],[2,3],[3,2],[2,3],[2,3],null,[0,3],[1,0],[1,0],[0,1],[0,0],[2,1],[1,0],[1,1],[1,1],null,null,null],
+	[null,[2,0],[3,4],[2,1],null,[1,1],[1,2],[2,0],[2,2],null,[2,0],[2,2],[2,1],[0,0],[1,0],null,[1,0],null,[1,1],null]
+
 	];
 
 function getResults(teamName)
