@@ -144,6 +144,63 @@ function getResults(teamName)
 	return teamData;
 }
 
+var RowsContainer = React.createClass({
+	render: function() {
+		var rowNodes = this.props.data.map(function (row) 
+		{
+			if (!!row)
+			{
+				return (
+					<div>
+						<TeamCollectionContainer data={row} key={row[0].index}/>
+					</div>
+				);
+			}
+			else 
+			{
+				return (
+					<div>
+					Empty
+					</div>
+				);
+			}
+		});
+		return (
+			<div className ="rowsContainer">
+				{rowNodes}
+			</div>
+		);
+	}
+});
+
+var TeamCollectionTitle = React.createClass({
+	render: function() {
+		return (
+			<h2>
+			{this.props.data.index}
+			</h2>
+		);
+	}
+});
+
+var TeamCollectionContainer = React.createClass({
+	render: function() {
+		var idx= this.props.data.shift();
+		var teamContainers = this.props.data.map(function(team)
+		{
+			return (
+				<TeamBox data={team} /> 
+			)
+		});
+		return (
+			<div className="teamCollection">
+				<TeamCollectionTitle data={idx} />
+				{teamContainers}
+			</div>
+		);
+	}
+});
+
 var TeamsContainer = React.createClass({
 	render: function() {
 		var teamNodes = this.props.data.map(function(team)
@@ -192,13 +249,29 @@ var PrepareTeamData = function()
 		data.push(getResults(_TeamNamesByIndex[i]));
 	}
 	data.sort(sortfunction);
-	return data;
+	
+	var highNum = data[0].points;
+	var pointRowData = new Array(highNum);
+	for (var j = 0; j < data.length; j++)
+	{
+		var index = data[j].points;
+		if (!!pointRowData[index])
+		{
+			pointRowData[index].push(data[j]);
+		}
+		else
+		{
+			var obj = {index: index}
+			pointRowData[index] = [obj, data[j]];
+		}
+	}
+	return pointRowData.reverse();
 }
 
 var data = PrepareTeamData();
 
 ReactDOM.render(
-	<teamsContainer data={data} />,
+	<RowsContainer data={data} />,
 	document.getElementById('content')
 );
 
