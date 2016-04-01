@@ -65,3 +65,11 @@ ul {
 {
 	border: 1px solid;
 }
+
+.teamBox
+{
+		display: inline-block;
+		margin: 10px;
+		border: 1px solid;
+		padding: 5px;
+}

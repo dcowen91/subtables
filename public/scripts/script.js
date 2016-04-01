@@ -177,7 +177,7 @@ var TeamCollectionTitle = React.createClass({
 	render: function() {
 		return (
 			<h2>
-			{this.props.data.index}
+			{this.props.data.index} Points
 			</h2>
 		);
 	}
@@ -221,16 +221,15 @@ var TeamBox = React.createClass({
 	render: function() {
 		return (
 			<div className="teamBox">
-				<h2>
-					{this.props.data.teamName}
-				</h2>
-				<div className="teamData">
-					{this.props.data.points} POINTS
+				<span>
+					{this.props.data.teamName} 
+				</span>
+				<span className="teamData">
 					<br />
 					{this.props.data.record.WIN}W : {this.props.data.record.DRAW}D : {this.props.data.record.LOSE}L
 					<br />
 					{this.props.data.goals.GF} GF : {this.props.data.goals.GA} GA  ({this.props.data.goals.GF - this.props.data.goals.GA})
-				</div>
+				</span>
 			</div>
 		);
 	}
