@@ -264,7 +264,7 @@ var PrepareTeamData = function()
 
 var data = getResults("TOTTENHAM HOTSPUR");
 ReactDOM.render(
-	<TeamBox props={data} />,
+	<TeamBox record={data.record} goals={data.goals} teamName={data.teamName} />,
   document.getElementById('content')
 )
 

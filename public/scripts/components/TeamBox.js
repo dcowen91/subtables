@@ -10,7 +10,7 @@ const TeamBox = ({record, goals, teamName}) =>
 			<br />
 			{record.WIN}W : {record.DRAW}D : {record.LOSE}L
 			<br />
-			{goals.GF} GF : {goals.GA} GA  ({goals.GF - GA})
+			{goals.GF} GF : {goals.GA} GA  ({goals.GF - goals.GA})
 		</span>
 	</div>
 )
