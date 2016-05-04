@@ -26,22 +26,6 @@ app.listen(app.get('port'), function() {
   console.log('Server started: http://localhost:' + app.get('port') + '/');
 });
 
-// http.createServer(function(req, res) {
-// 	res.writeHead(200, { 'Content-Type': 'text/plain' });
-// 	var responseString = "";
-// 	for (var i = 0; i < _TeamNamesByIndex.length; i++)
-// 	{
-// 		var current = getResults(_TeamNamesByIndex[i]);
-// 		var currentString = current.name + "\n"
-// 							+ current.record.WIN + " wins, "
-// 							+ current.record.DRAW + " draws,"
-// 							+ current.record.LOSE + " losses\n"
-// 							+ current.goals.GF + " for, "
-// 							+ current.goals.GA + " against ("
-// 							+  (current.goals.GF- current.goals.GA) + " GD)\n\n";
-// 		responseString += currentString;
-// 	}
-// 	res.end(responseString);
-// }).listen(port);
+
 //git push azure master to deploy
 //git push origin master to save

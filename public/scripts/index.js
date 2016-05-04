@@ -1,3 +1,10 @@
+import 'babel-polyfill'
+import React from 'react'
+import ReactDOM  from 'react-dom'
+import { createStore } from 'redux'
+import { Provider, connect } from 'react-redux'
+import TeamBox from './components/TeamBox'
+
 var _TeamNameToIndexMapping = {
 	"ARSENAL" : 0, 
 	"ASTON VILLA": 1, 
@@ -217,24 +224,6 @@ var TeamsContainer = React.createClass({
 	}
 });
 
-var TeamBox = React.createClass({
-	render: function() {
-		return (
-			<div className="teamBox">
-				<span>
-					{this.props.data.teamName} 
-				</span>
-				<span className="teamData">
-					<br />
-					{this.props.data.record.WIN}W : {this.props.data.record.DRAW}D : {this.props.data.record.LOSE}L
-					<br />
-					{this.props.data.goals.GF} GF : {this.props.data.goals.GA} GA  ({this.props.data.goals.GF - this.props.data.goals.GA})
-				</span>
-			</div>
-		);
-	}
-});
-
 var sortfunction = function(a,b)
 {
 	return b.points -  a.points;
@@ -242,7 +231,6 @@ var sortfunction = function(a,b)
 var PrepareTeamData = function()
 {
 	var data = [];
-	// var data = [getResults(_TeamNamesByIndex[0])];
 	for (var i = 0; i < _TeamNamesByIndex.length; i++)
 	{
 		data.push(getResults(_TeamNamesByIndex[i]));
@@ -267,13 +255,31 @@ var PrepareTeamData = function()
 	return pointRowData.reverse();
 }
 
-var data = PrepareTeamData();
+// var data = PrepareTeamData();
 
+// ReactDOM.render(
+// 	<RowsContainer data={data} />,
+// 	document.getElementById('content')
+// );
+
+var data = getResults("TOTTENHAM HOTSPUR");
 ReactDOM.render(
-	<RowsContainer data={data} />,
-	document.getElementById('content')
-);
+	<TeamBox props={data} />,
+  document.getElementById('content')
+)
 
+
+//state structure:
+// state.visibleTeams: ["ars", "tot"]...
+// state.teamData = [{W: X, L: Y, D:Z, Name:ARS},...]
+
+//DOM structure
+// App
+// <TODO filter components>
+// <PointRowCollection>
+//   <PointRow>
+//     <Team>
+//    ..
 
 //git push azure master to deploy
 //git push origin master to save
