@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM  from 'react-dom'
 import { createStore } from 'redux'
 import { Provider, connect } from 'react-redux'
-import TeamBox from './components/TeamBox'
+import GroupsContainer from './components/GroupsContainer'
 
 var _TeamNameToIndexMapping = {
 	"ARSENAL" : 0, 
@@ -146,83 +146,11 @@ function getResults(teamName)
 	teamName : teamName,
 	record: record,
 	goals: goals,
-	points: record.WIN * 3 + record.DRAW 
+	points: record.WIN * 3 + record.DRAW,
+	id: teamIndex
 	};
 	return teamData;
 }
-
-var RowsContainer = React.createClass({
-	render: function() {
-		var rowNodes = this.props.data.map(function (row) 
-		{
-			if (!!row)
-			{
-				return (
-					<div>
-						<TeamCollectionContainer data={row} key={row[0].index}/>
-					</div>
-				);
-			}
-			else 
-			{
-				return (
-					<div>
-					Empty
-					</div>
-				);
-			}
-		});
-		return (
-			<div className ="rowsContainer">
-				{rowNodes}
-			</div>
-		);
-	}
-});
-
-var TeamCollectionTitle = React.createClass({
-	render: function() {
-		return (
-			<h2>
-			{this.props.data.index} Points
-			</h2>
-		);
-	}
-});
-
-var TeamCollectionContainer = React.createClass({
-	render: function() {
-		var idx= this.props.data.shift();
-		var teamContainers = this.props.data.map(function(team)
-		{
-			return (
-				<TeamBox data={team} /> 
-			)
-		});
-		return (
-			<div className="teamCollection">
-				<TeamCollectionTitle data={idx} />
-				{teamContainers}
-			</div>
-		);
-	}
-});
-
-var TeamsContainer = React.createClass({
-	render: function() {
-		var teamNodes = this.props.data.map(function(team)
-		{
-			return (
-				<TeamBox data={team} key={team.teamName} />
-			);
-		});
-		return (
-			<div className = "teamList">
-				{teamNodes}
-			</div>
-		);
-	}
-});
 
 var sortfunction = function(a,b)
 {
@@ -262,22 +190,29 @@ var PrepareTeamData = function()
 // 	document.getElementById('content')
 // );
 
-var data = getResults("TOTTENHAM HOTSPUR");
+var data =
+{
+	pointValue : 58,
+	teams : [getResults("TOTTENHAM HOTSPUR"), getResults("ARSENAL")]
+};
+var data2 =
+{
+	pointValue : 57,
+	teams : [getResults("LEICESTER CITY") ]
+};
+
+var combined = [data, data2];
+
 ReactDOM.render(
-	<TeamBox record={data.record} goals={data.goals} teamName={data.teamName} />,
-  document.getElementById('content')
+	<GroupsContainer groups ={combined}/>,
+	document.getElementById('content')
 )
-
-
-//state structure:
-// state.visibleTeams: ["ars", "tot"]...
-// state.teamData = [{W: X, L: Y, D:Z, Name:ARS},...]
 
 //DOM structure
 // App
 // <TODO filter components>
 // <PointRowCollection>
-//   <PointRow>
+//   <PointsGroup>
 //     <Team>
 //    ..
 

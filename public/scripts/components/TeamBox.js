@@ -15,7 +15,7 @@ const TeamBox = ({record, goals, teamName}) =>
 	</div>
 )
 
-TeamBox.PropTypes = {
+TeamBox.propTypes = {
 	record: PropTypes.shape({
 		WIN: PropTypes.number.isRequired,
 		DRAW: PropTypes.number.isRequired,
