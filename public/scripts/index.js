@@ -198,10 +198,16 @@ var data =
 var data2 =
 {
 	pointValue : 57,
+	teams: []
+};
+
+var data3 =
+{
+	pointValue : 56,
 	teams : [getResults("LEICESTER CITY") ]
 };
 
-var combined = [data, data2];
+var combined = [data, data2, data3];
 
 ReactDOM.render(
 	<GroupsContainer groups ={combined}/>,
